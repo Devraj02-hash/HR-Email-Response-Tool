@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Candidate Email Response</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>HR Candidate Email Response</h2>
+        <form id="emailForm">
+            <label>Candidate Name</label>
+            <input type="text" id="candidateName" required>
+
+            <label>Candidate Email</label>
+            <input type="email" id="candidateEmail" required>
+
+            <label>Position Applied</label>
+            <input type="text" id="positionApplied" required>
+
+            <label>Status</label>
+            <div class="status-options">
+                <input type="radio" name="status" value="Selected" required> Selected
+                <input type="radio" name="status" value="Rejected"> Rejected
+            </div>
+
+            <button type="submit">Send Email</button>
+        </form>
+
+        <div id="previewContainer" style="display:none;">
+            <h3>Email Preview</h3>
+            <pre id="emailPreview"></pre>
+            <button id="confirmSend">Confirm Send</button>
+        </div>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
